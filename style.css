@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    position: relative;
+    background-color: red;
+    overflow: hidden;
+    color: black;
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    border-radius: 100px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+span {
+    position: relative;
+    pointer-events: none;
+}
+
+#button::before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    background: radial-gradient(circle closest-side, rgb(255, 219, 59), transparent);
+    width: var(--size);
+    height: var(--size);
+    transform: translate(-50%, -50%);
+    transition: .2s ease;
+}
+
+#button:hover::before {
+    --size: 400px;
+}
